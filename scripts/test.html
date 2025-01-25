@@ -4,10 +4,27 @@
     <h1 style="text-align:center;">University Department Look Up</h1>
 
     <div>
-      <p>Enter Department: </p>
+      <h2>Look Up Department</h2><br>
+      <p>Enter Department Code: </p>
       <input type="text" id="dept"></input><br>
-      <button type="button" onclick="getData()">Change Content</button>
-      <h3></h3>
+      <button type="button" onclick="getData()">Submit</button>
+      <h3 id="results1"></h3><br>
+    </div>
+
+    <div>
+      <h2>Look Up Department Attributes</h2><br>
+      <p>Enter Department Code: </p>
+      <input type="text" id="deptAll"></input><br>
+      <button type="button" onclick="getDataAll()">Submit</button>
+      <h3 id="results2"></h3><br>
+    </div>
+
+    <div>
+      <h2>Look Up Department and Instructor Attributes</h2><br>
+      <p>Enter Department Code: </p>
+      <input type="text" id="deptInst"></input><br>
+      <button type="button" onclick="getDataDepartmentInstructor()">Submit</button>
+      <h3 id="results3"></h3><br>
     </div>
 
     <script src="client-call.js"></script>
