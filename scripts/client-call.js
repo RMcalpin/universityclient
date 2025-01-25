@@ -124,3 +124,58 @@ async function getDataDepartmentInstructor() {
     }
 }
 
+async function insertData() {
+    var deptcode = document.querySelector("#deptCodeInsert").value;
+    var deptname = document.querySelector("#deptNameInsert").value;
+    var deptoffice = document.querySelector("#deptOfficeInsert").value;
+    var deptphone = document.querySelector("#deptPhoneInsert").value;
+    var deptchairid = document.querySelector("#deptChairIdInsert").value;
+    var deptstartdate = document.querySelector("#CStartDateInsert").value;
+    
+    const url = "http://localhost:3000/departments/insert/";
+    var urlanddept = url + deptcode;
+
+    try {
+        const response = await fetch(urlanddept, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "DeptCode":deptcode,
+                "DeptName":deptname,
+                "DeptOffice":deptoffice,
+                "DeptPhone":deptphone,
+                "department_chairid":deptchairid,
+                "CStartDate":deptstartdate
+            })
+        });
+  
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        console.log(json);
+        var query = document.querySelector("#results4");
+        if (query) {
+            query.textContent = "Insert successful";
+        } else {
+            console.error("Element not found");
+        }        
+    } catch (error) {
+        if (error.message.includes('Network response was not ok')) {
+        
+        switch (error.message.split(': ')[1]) {
+            case '0':
+                console.error('Request failed. Possible network issue.');
+                break;
+            case '404':
+                console.error('Resource not found.');
+                break;
+        }
+        } else {
+            console.error('Error:', error);
+        }
+    }
+}
