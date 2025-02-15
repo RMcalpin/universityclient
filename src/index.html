@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      .topnav a.active {
+        background-color: #040cac;
+        color: white;
+      }
+      </style>
+  </head>
   <body>
+    <div class="topnav">
+      <a href="#Home">Home</a>
+      <a class="active" href=".\index.html">Department</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div><br>
+
     <h1 style="text-align:center;">University Department Look Up</h1>
 
     <div>
@@ -25,6 +59,19 @@
       <input type="text" id="deptInst"></input><br>
       <button type="button" onclick="getDataDepartmentInstructor()">Submit</button>
       <h3 id="results3"></h3><br>
+    </div>
+
+    <div>
+      <h2>Enter New Department</h2><br>
+      <p>Enter Department Attributes: </p>
+      <input type="text" id="deptCodeInsert">Code</input><br>
+      <input type="text" id="deptNameInsert">Name</input><br>
+      <input type="text" id="deptOfficeInsert">Office</input><br>
+      <input type="text" id="deptPhoneInsert">Phone</input><br>
+      <input type="text" id="deptChairIdInsert">Chair ID</input><br>
+      <input type="text" id="CStartDateInsert">Start Date</input><br>
+      <button type="button" onclick="insertData()">Submit</button>
+      <h3 id="results4"></h3><br>
     </div>
     <script src="client-call.js" defer></script>
   </body>
