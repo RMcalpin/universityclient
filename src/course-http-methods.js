@@ -1,5 +1,5 @@
 async function getData() {
-    var courseget = document.querySelector("#dept").value;
+    var courseget = document.querySelector("#course").value;
     const url = "http://localhost:3000/courses/";
     var urlandcourse = url + courseget;
     
