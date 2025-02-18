@@ -84,7 +84,7 @@ async function getDataAll() {
 
 async function getDataCourseSection() {
     var courseget = document.querySelector("#courseSec").value;
-    const url = "http://localhost:3000/departments/department_instructor/";
+    const url = "http://localhost:3000/courses/course_section/";
     var urlandcourse = url + courseget;
     
     try {
